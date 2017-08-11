@@ -1,0 +1,4 @@
+jira_auth=korobeynikova@anylogic.com
+server=http://10.0.103.5:8080/
+pattern=(A[CL]-\d*)
+testpad_auth=siverka@gmail.com
