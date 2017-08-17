@@ -1,1 +1,0 @@
-id: 195, issue: AC-132, status: blocked, jira: Resolved
