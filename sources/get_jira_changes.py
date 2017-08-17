@@ -15,9 +15,11 @@ def get_jira_changes(tests: list, server: str, auth: tuple):
     changes = []
     i, n = 0, len(tests)
     for check in tests:
-        status = jira.issue(check.issue, fields='status').fields.status.name
+        issue = jira.issue(check.issue)
+        status = issue.fields.status.name
+        resolution = issue.fields.resolution
         if status not in statuses[check.status]:
-            changes.append(repr(check) + ", jira: " + status + '\n')
+            changes.append(repr(check) + ", jira: " + status + ', resolution: ' + str(resolution) + '\n')
         i += 1
         progress(i, n)
     return changes
