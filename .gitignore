@@ -2,3 +2,5 @@
 \.idea/
 
 sources/__pycache__/
+
+outputs/
