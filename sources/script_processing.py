@@ -1,4 +1,5 @@
 import keyring
+import os
 from sources.testpad import get_tests
 
 from sources.get_jira_changes import get_jira_changes
@@ -16,7 +17,8 @@ def script_processing(script_name: str, config: dict):
                                auth=(config['jira_auth'],
                                      keyring.get_password('jira', config['jira_auth'])))
     # Print out the changes
-    output_file = script_name + '.txt'
-    print('\nOutput file:', output_file)
-    with open('outputs/' + output_file, 'w') as file:
+    print('\nOutput file:', script_name)
+    output_file = 'outputs/' + script_name + '.txt'
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    with open(output_file, 'w') as file:
         file.writelines(changes)

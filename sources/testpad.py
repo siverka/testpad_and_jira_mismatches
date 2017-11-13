@@ -1,8 +1,6 @@
 import re
 from csv import reader
-
 import requests
-
 from sources.check_item import CheckItem
 
 
@@ -31,10 +29,10 @@ def get_script_url(script_name: str):
     scripts = {
         'AL IDE issues': '10',
         'Cloud components': '14',
-        'Cloud sanity': '15',
+        'Cloud regression': '15',
         'Cloud issues': '17'
     }
-    url = 'https://siverka.ontestpad.com/script/' + scripts[script_name]
+    url = 'https://anylogic.ontestpad.com/script/' + scripts[script_name]
     return url + '/exportcsv//testpad-' + script_name.lower().replace(' ', '-')
 
 
