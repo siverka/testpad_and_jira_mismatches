@@ -15,7 +15,8 @@ def script_processing(script_name: str, config: dict):
     changes = get_jira_changes(tests,
                                server=config['server'],
                                auth=(config['jira_auth'],
-                                     keyring.get_password('jira', config['jira_auth'])))
+                                     keyring.get_password('jira', config['jira_auth'])),
+                               mode='issues')
     # Print out the changes
     print('\nOutput file:', script_name)
     output_file = 'outputs/' + script_name + '.txt'
