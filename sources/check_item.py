@@ -1,7 +1,7 @@
 # Class for one check item in check list with
 # id - number of check item
 # status - pass/failed/block
-# issue - link Jira issue
+# issue - link JIRA issue
 
 
 class CheckItem:

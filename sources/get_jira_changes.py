@@ -8,7 +8,7 @@ statuses = {'pass': ['Closed'],
             '': ['Open', 'In Progress', 'Reopened'],
             'query': ['Open', 'In Progress', 'Reopened']}
 
-
+# TODO add description of modes
 def get_jira_changes(tests: list, server: str, auth: tuple, mode = ['info', 'issues']):
     jira = JIRA(server, basic_auth=auth)
     global statuses

@@ -4,7 +4,7 @@ from sources.testpad import get_tests
 
 from sources.get_jira_changes import get_jira_changes
 
-
+# TODO pass mode parameter to method
 def script_processing(script_name: str, config: dict):
     # Get tests with jira issue from script
     tests = get_tests(script_name,
