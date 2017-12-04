@@ -28,9 +28,11 @@ def get_script_url(script_name: str):
     # TODO add script_name validation
     scripts = {
         'AL IDE issues': '10',
+        'AL regression': '19',
         'Cloud components': '14',
         'Cloud regression': '15',
-        'Cloud issues': '17'
+        'Cloud issues': '17',
+        'Cloud issues p.2': '22'
     }
     url = 'https://anylogic.ontestpad.com/script/' + scripts[script_name]
     return url + '/exportcsv//testpad-' + script_name.lower().replace(' ', '-')

@@ -4,8 +4,8 @@ from sources.testpad import get_tests
 
 from sources.get_jira_changes import get_jira_changes
 
-# TODO pass mode parameter to method
-def script_processing(script_name: str, config: dict):
+
+def script_processing(script_name: str, config: dict, output_mode: str):
     # Get tests with jira issue from script
     tests = get_tests(script_name,
                       config['testpad_auth'],
@@ -16,7 +16,7 @@ def script_processing(script_name: str, config: dict):
                                server=config['server'],
                                auth=(config['jira_auth'],
                                      keyring.get_password('jira', config['jira_auth'])),
-                               mode='issues')
+                               mode=output_mode)
     # Print out the changes
     print('\nOutput file:', script_name)
     output_file = 'outputs/' + script_name + '.txt'

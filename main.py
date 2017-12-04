@@ -16,4 +16,4 @@ with open('configuration.txt', 'r') as file:
 # Execute validation
 for script in script_names:
     print('\n' + script)
-    script_processing(script, config)
+    script_processing(script, config, output_mode='info')
